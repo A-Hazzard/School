@@ -10,6 +10,8 @@ public class Circle extends GeoFigure {
     public Circle(int rad) {
         radius = rad;
     }
+
+    
     // Modifiers
     public void setRadius(int rad) {
       radius = rad;
