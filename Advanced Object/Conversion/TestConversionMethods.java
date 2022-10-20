@@ -1,4 +1,4 @@
-public class TestConversionMethods implements ConversionMethods, ConversionFactors{
+public class TestConversionMethods implements ConversionMethodsAndFactors{
     public static void main(String[] args) {
         double height = 70, food = 4;
 
