@@ -1,5 +1,4 @@
-package Inheritance_an_Abstract_Classes.Employee;
-
+package TABLE;
 public class CommissionEmployee extends Employee
 {
 	protected  double grossSales, commissionRate; 

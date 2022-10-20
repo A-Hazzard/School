@@ -1,6 +1,4 @@
-package Inheritance_an_Abstract_Classes.Employee;
-
-public abstract class Employee 
+public abstract class Employee implements Payable
 {
    protected String firstName;
    protected String lastName;

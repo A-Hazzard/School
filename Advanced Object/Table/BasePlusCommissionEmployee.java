@@ -1,5 +1,3 @@
-package Inheritance_an_Abstract_Classes.Employee;
-
 public class BasePlusCommissionEmployee extends CommissionEmployee {
 
     private double baseSalary;
