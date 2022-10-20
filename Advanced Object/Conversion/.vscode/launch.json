@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch TestConversionMethods",
+            "request": "launch",
+            "mainClass": "TestConversionMethods",
+            "projectName": "Conversion_3e9968fc"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestConversionFactors",
+            "request": "launch",
+            "mainClass": "TestConversionFactors",
+            "projectName": "Conversion_3e9968fc"
+        }
+    ]
+}
