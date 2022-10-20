@@ -4,6 +4,7 @@ package Inheritance_an_Abstract_Classes.Employee;
 public class HourlyEmployee extends Employee 
 {
    protected  double wage; // wage per hour
+   
    protected  double hours; // hours worked for week
 
    // five-argument constructor
