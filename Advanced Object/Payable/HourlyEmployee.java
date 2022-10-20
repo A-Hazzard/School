@@ -33,7 +33,7 @@ public class HourlyEmployee extends Employee
    } // end method getHours
 
    // calculate earnings; override abstract method earnings in Employee
-   public double earnings() {
+   public double getPaymentAmount() {
       if ( hours <= 40 ) // no overtime
          return wage * hours;
       else

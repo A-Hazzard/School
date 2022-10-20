@@ -54,7 +54,7 @@ public Employee(String first, String last,String ssn )
    } // end method toString
 
    // abstract method overridden by subclasses
-   public abstract double earnings(); // no implementation here
+   public abstract double getPaymentAmount(); // no implementation here
 } // end abstract class Employee
 
 

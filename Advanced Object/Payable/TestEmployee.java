@@ -11,7 +11,7 @@ public class TestEmployee {
     for (int i = 0; i < employee.length; i++) {
         System.out.println(employee[i].toString());
 
-            double earnings = employee[i].earnings();
+            double earnings = employee[i].getPaymentAmount();
             System.out.println("Salary:$ "+ earnings);
 
         System.out.println();

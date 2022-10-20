@@ -1,6 +1,6 @@
 
 
-public class Invoice {
+public class Invoice implements Payable{
 
     //attributes
     private String partNumber;
@@ -53,7 +53,7 @@ public class Invoice {
    }
   
    //calculate invoice amount
-   public double getInvoiceAmount(){
+   public double getPaymentAmount(){
    	return itemPrice * quantity;
    }
    

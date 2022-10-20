@@ -1,4 +1,4 @@
-package TABLE;
+
 public class CommissionEmployee extends Employee
 {
 	protected  double grossSales, commissionRate; 
@@ -25,7 +25,7 @@ public class CommissionEmployee extends Employee
 		return grossSales;
 	}
 	
-	public double earnings(){
+	public double getPaymentAmount(){
 		return getCommissionRate() * getGrossSales();
 	}
 	
