@@ -1,10 +1,3 @@
-/**
- * @(#)Invoice.java
- *
- *
- * @author 
- * @version 1.00 2020/3/23
- */
 
 
 public class Invoice {
