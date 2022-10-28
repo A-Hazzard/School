@@ -1,0 +1,11 @@
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\bin\Debug\Class Example.exe.config
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\bin\Debug\Class Example.exe
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\bin\Debug\Class Example.pdb
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.csproj.AssemblyReference.cache
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.csproj.SuggestedBindingRedirects.cache
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class_Example.Form1.resources
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class_Example.Properties.Resources.resources
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.csproj.GenerateResource.cache
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.csproj.CoreCompileInputs.cache
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.exe
+C:\Users\raush\source\repos\Class Example_SLN\Class Example\obj\Debug\Class Example.pdb

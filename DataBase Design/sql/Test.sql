@@ -1,2 +1,5 @@
-CREATE TABLE LOGIN(username VARCHAR(40),
-  userpassword VARCHAR2(40));
+
+CREATE TABLE employees ( employee_id NUMBER(6), first_name VARCHAR2(20), last_name VARCHAR2(25) CONSTRAINT emp_last_name_nn NOT NULL, email VARCHAR2(25) CONSTRAINT emp_email_nn NOT NULL, phone_number VARCHAR2(20), hire_date DATE CONSTRAINT emp_hire_date_nn NOT NULL, job_id VARCHAR2(10) CONSTRAINT emp_job_nn NOT NULL, salary NUMBER(8,2), commission_pct NUMBER(2,2), manager_id NUMBER(6), department_id NUMBER(4), CONSTRAINT emp_salary_min CHECK (salary > 0) );
+INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) VALUES ( 100, 'Steven', 'King', 'SKING', '515.123.4567', TO_DATE('17-06-2003', 'dd-MM-yyyy'), 'AD_PRES', 24000, NULL, NULL, 90);
+INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) VALUES ( 100, 'Steven', 'King', 'SKING', '515.123.4567', TO_DATE('17-06-2003', 'dd-MM-yyyy'), 'AD_PRES', 24000, NULL, NULL, 90);
+ INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) VALUES ( 102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', TO_DATE('13-01-2001', 'dd-MM-yyyy'), 'AD_VP', 17000, NULL, 100, 90); 
