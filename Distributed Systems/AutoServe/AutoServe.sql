@@ -128,3 +128,5 @@ CREATE TABLE Accessories(
     Type VARCHAR(20) PRIMARY KEY NOT NULL,
     Cost NUMBER(8) NOT NULL
 );
+
+
