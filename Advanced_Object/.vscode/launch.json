@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Fib",
+            "request": "launch",
+            "mainClass": "Fib",
+            "projectName": "Advanced_Object_8bd310f0"
+        },
+        {
+            "type": "java",
             "name": "Launch TestGeoFigure",
             "request": "launch",
             "mainClass": "Inheritance_an_Abstract_Classes.GeoFigure.TestGeoFigure",

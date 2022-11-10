@@ -1,7 +1,7 @@
 public class TestConversionFactors
  /*You can say "implements ConversionFactors" */ {
     public static void main(String[] args) {
-        double height = 70, food = 4, arm = 40;
+        double height = 70, food = 4;
 
         System.out.println("My height in mm: " + inchestomm(height));
         System.out.println("My food in grams: " + ouncetogram(food));
