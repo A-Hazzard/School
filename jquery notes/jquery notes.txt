@@ -1,0 +1,39 @@
+SLIDE EFFECT
+slideDown()
+slideUp()
+slideToggle()
+
+FADE
+fadeMethods():
+fadeIn()
+fadeOut()
+fadeTo()
+toggle()
+
+AIMATIONS
+animate(
+{animation css}, {speed}, {callback}
+)
+
+CHAIN ANIMATIONS
+.animate({style}, speed, function).animate({style}, speed, function)
+
+SCROLL TO A SUB SECTION IN ANOTHER PAGE
+	let page_url = window.location.href;
+    let page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
+    
+    if(page_id === "section3"){
+        $("html, body").animate({scrollTop: $("#scroll-" + page_id)
+    .offset().top
+        }, "slow");
+    }else if(page_id === "post"){
+        $("html, body").animate({scrollTop: $("#scroll-" + page_id)
+    .offset().top
+        }, "slow");
+    }
+
+CHANGE THE ATTRIBUTE OF SOMETHING OR CHANGE PASSWORD
+.attr(name, value) - variableName.attr('type', 'text');
+
+ADD CONTENT BEFORE OR AFTER AN ELEMENT
+append/prepend: append("text comes after") prepend("text comes before")
