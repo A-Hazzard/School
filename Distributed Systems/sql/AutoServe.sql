@@ -1,0 +1,7 @@
+CREATE TABLE booking(
+name VARCHAR(20) NOT NULL,
+email VARCHAR(50) NOT NULL,
+phone VARCHAR(15) NOT NULL,
+address VARCHAR(120) NOT NULL,
+PRIMARY KEY(email)
+);
