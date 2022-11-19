@@ -2,7 +2,11 @@
                     data-aos-offset="-100"
                     data-aos-delay="1"
                     data-aos-duration="1000"
+<<<<<<< HEAD
                     data-aos-easing="ease-in-out"
+=======
+                    data-aos-easing="ease-in-out
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top" id="aboutUs-main-flex-container">

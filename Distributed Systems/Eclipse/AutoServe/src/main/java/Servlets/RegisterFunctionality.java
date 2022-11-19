@@ -33,7 +33,11 @@ public class RegisterFunctionality {
 		loadDriver(dbDriver);
 		Connection con = getConnection();
 		String result = "Data entered successfully. <a href = \"registration.html\">Register again.</a>";
+<<<<<<< HEAD
 		String sql = "INSERT INTO clients VALUES(clientID.nextval,?,?,?,?,?,'Client')";
+=======
+		String sql = "INSERT INTO Person VALUES(personID.nextval,?,?,?,?,?)";
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
 		
 		PreparedStatement ps;
 		try {
@@ -43,8 +47,11 @@ public class RegisterFunctionality {
 			ps.setString(3, credentials.getEmail());
 			ps.setString(4, credentials.getPhone());
 			ps.setString(5, credentials.getPassword());
+<<<<<<< HEAD
 			//ps.setString(6, credentials.getPosition());
 
+=======
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

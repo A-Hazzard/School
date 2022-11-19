@@ -1,18 +1,31 @@
+<<<<<<< HEAD
 <!--Main content for login page-->
+=======
+  <!--Main content for login page-->
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
     <div data-aos="zoom-in-up"
                     data-aos-offset="-100"
                     data-aos-delay="1"
                     data-aos-duration="500"
+<<<<<<< HEAD
                     data-aos-easing="ease-in-out"
+=======
+                    data-aos-easing="ease-in-out
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top" id = "access-main">
 <br><br>
         <h2>Log In</h2><br>
         <p>New to this site? <a href="#" id="registrationPage">Sign up</a> </p>
+<<<<<<< HEAD
 
         <!--Form used for logging in-->
         <form action="jsp/LoginAction.jsp" method="post" class="Form">
+=======
+        <!--Form used for logging in-->
+        <form action="LoginServlet" method="post" id="loginForm">
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
             <table id="loginFormTable">
             
                 <tr>
@@ -21,7 +34,11 @@
                         <input type="email" name="email" id="email" required>
                     </td>
                 </tr>
+<<<<<<< HEAD
                 <tr>
+=======
+                 <tr>
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
                     <td>
                         <label for="password">Password: </label><br>
                         <input type="password" name="password" id="password" required> <br>
@@ -45,6 +62,7 @@
     </div>
 
     <script>
+<<<<<<< HEAD
 
 
             //loads registrationPage on click
@@ -72,6 +90,32 @@
             }
             })
         })
+=======
+    //loads registrationPage on click
+    $("#registrationPage").on('click', function(){
+        $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
+    })
+
+    //changes password to Text
+    $(function(){
+  let viewPwd = false;
+
+    $("#viewPwd").on('click', function(){
+      let getPwdType = $("#password");
+      if(viewPwd === false) {
+        console.log('checked, changed password field to text')
+        getPwdType.attr('type', 'text');
+        viewPwd = true;
+      
+      }
+      else if(viewPwd === true){
+        console.log("Unchecked, changed password field back to password")
+        getPwdType.attr('type', 'password');
+        viewPwd = false;
+      }
+    })
+})
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
     </script>
    
    

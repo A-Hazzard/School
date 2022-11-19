@@ -50,7 +50,11 @@ border-right: none;
     }
     //Styles the navigation bar's content
     .navbar{
+<<<<<<< HEAD
         width: 45%;
+=======
+        width: 35%;
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
         flex: 1;//flex used to help center navbar
         
             ul{
@@ -66,13 +70,20 @@ border-right: none;
                     font-size: 1.3rem;
                     font-family: $headerFont;
                 }
+<<<<<<< HEAD
 
                 
+=======
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
             }
         }
 
     }
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
 .access-header{ 
 
         background-color: white;
@@ -137,7 +148,11 @@ border-right: none;
     border: none !important;
 
 }
+<<<<<<< HEAD
 #index-main, #admin-main {
+=======
+#index-main {
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
  
 
 
@@ -227,7 +242,11 @@ border-right: none;
 
 
 //Main container to hold main content
+<<<<<<< HEAD
 #access-main, .forpassword-main{
+=======
+#access-main{
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
 
     height: 80vh;
 
@@ -247,7 +266,11 @@ border-right: none;
         }
     }
 
+<<<<<<< HEAD
     .Form{
+=======
+    #loginForm{
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
     
     padding-left: 38%;
     padding-top: 2%;    
@@ -268,6 +291,7 @@ border-right: none;
             border-color: grey;
             margin-bottom: 5%;
             outline: none;
+<<<<<<< HEAD
         
             
         }
@@ -295,6 +319,12 @@ border-right: none;
         }
 
     
+=======
+           
+            
+        }
+
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
         
         input[type=submit]{
             width: 60%;

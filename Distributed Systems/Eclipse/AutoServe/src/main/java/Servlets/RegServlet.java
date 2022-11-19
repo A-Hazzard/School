@@ -26,9 +26,13 @@ public class RegServlet extends HttpServlet {
 			String lastname = request.getParameter("lastname");
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
+<<<<<<< HEAD
 			//String position = request.getParameter("position");
 			String password = request.getParameter("password");
 			
+=======
+			String password = request.getParameter("password");
+>>>>>>> parent of 4e0e58a (backed up eclipse folders)
 
 			//put user info into a class to process
 			userInfo credentials = new userInfo(firstname, lastname, email, phone, password);
