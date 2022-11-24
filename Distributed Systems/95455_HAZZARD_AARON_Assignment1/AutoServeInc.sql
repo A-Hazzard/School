@@ -1,0 +1,156 @@
+CREATE SEQUENCE orderNum
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE SEQUENCE assignmentID
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE SEQUENCE repairNum
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE SEQUENCE clientID
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE SEQUENCE employeeID
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE SEQUENCE regQ_ID;
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+CREATE TABLE registrationQ(
+    regQ_ID NUMBER PRIMARY KEY NOT NULL,
+    clientID NUMBER NOT NULL,
+    vehicleType VARCHAR(20) NOT NULL,
+    plateNumber VARCHAR(10) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID)
+);
+
+CREATE TABLE clients(
+ID NUMBER NOT NULL PRIMARY KEY,
+firstName VARCHAR(20) NOT NULL,
+lastName VARCHAR(20) NOT NULL,
+email VARCHAR(50) NOT NULL,
+phone VARCHAR(15) NOT NULL,
+password VARCHAR(20) NOT NULL,
+position VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE employee(
+    ID NUMBER NOT NULL PRIMARY KEY,
+    firstName VARCHAR(20) NOT NULL,
+    lastName VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    position VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE mechanic(
+    mechanicID NUMBER NOT NULL PRIMARY KEY,
+    firstName VARCHAR(20) NOT NULL,
+    lastName VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    position VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE staff(
+    staffID NUMBER NOT NULL PRIMARY KEY,
+    firstName VARCHAR(20) NOT NULL,
+    lastName VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    position VARCHAR(20) NOT NULL
+);
+
+
+
+
+
+CREATE TABLE JOB (
+    type VARCHAR(30) NOT NULL,
+    descripton VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    status VARCHAR(10) NOT NULL,
+    clientID NUMBER NOT NULL,
+    mechanicID NUMBER NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID)
+);
+
+CREATE TABLE VEHICLE(
+    plateNumber VARCHAR(10) NOT NULL PRIMARY KEY,
+    vehicleType VARCHAR(20) NOT NULL,
+    clientID NUMBER NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID)
+
+);
+
+CREATE TABLE orderS(
+ orderNumber NUMBER NOT NULL PRIMARY KEY,
+ clientID NUMBER NOT NULL,
+ typeOfOrder VARCHAR(20) NOT NULL,
+ cost VARCHAR(10) NOT NULL,
+FOREIGN KEY(clientID) REFERENCES clients(ID)
+);
+
+--Not sure about this one yet if it should be made
+CREATE TABLE Accessories(
+    typeOfAccessory VARCHAR(20) NOT NULL PRIMARY KEY,
+    cost VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE registration(
+    regID NUMBER NOT NULL PRIMARY KEY,
+    clientID NUMBER NOT NULL,
+    staffID NUMBER NOT NULL,
+    mechanicID number NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(staffID) REFERENCES staff(staffID),
+    FOREIGN KEY(mechanicID) REFERENCES mechanic(mechanicID)
+
+);
+
+CREATE TABLE REPAIR(
+repairID NUMBER NOT NULL PRIMARY KEY,
+clientID NUMBER NOT NULL,
+FOREIGN KEY(clientID) REFERENCES clients(ID)
+);
+
+CREATE TABLE VEHICLE_COMPONENETS(
+typeOfComponenet VARCHAR(20) NOT NULL,
+cost VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE Assignment(
+assignmentID NUMBER NOT NULL PRIMARY KEY,
+mechanicID NUMBER NOT NULL,
+staffID NUMBER NOT NULL,
+jobType VARCHAR(20) NOT NULL,
+FOREIGN KEY(staffID) REFERENCES staff(staffID),
+FOREIGN KEY(mechanicID) REFERENCES mechanic(mechanicID)
+
+);
+INSERT INTO employee values(employeeID.nextval, 'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '+1 (868) 632-5987', 'winstonfields', 'admin');

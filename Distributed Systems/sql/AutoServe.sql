@@ -1,5 +1,6 @@
 drop sequence employeeID;
 drop table employee;
+SELECT ID FROM clients WHERE firstName = 'Hanna';
 
 CREATE SEQUENCE clientID
 MINVALUE 1
@@ -7,7 +8,7 @@ START WITH 1
 INCREMENT BY 1
 CACHE 10;
 
-CREATE SEQUENCE employeeID
+CREATE SEQUENCE RegQ_ID
 MINVALUE 1
 START WITH 1
 INCREMENT BY 1
