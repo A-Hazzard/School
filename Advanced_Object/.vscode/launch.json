@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch recursion",
+            "request": "launch",
+            "mainClass": "HomeWork.Assignment_II.recursion",
+            "projectName": "Advanced_Object_8bd310f0"
+        },
+        {
+            "type": "java",
             "name": "Launch Fib",
             "request": "launch",
             "mainClass": "Fib",
