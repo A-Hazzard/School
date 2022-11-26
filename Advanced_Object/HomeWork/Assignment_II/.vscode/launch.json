@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch arrayList",
+            "request": "launch",
+            "mainClass": "HomeWork.Assignment_II.arrayList",
+            "projectName": "Assignment_II_bcd5a892"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

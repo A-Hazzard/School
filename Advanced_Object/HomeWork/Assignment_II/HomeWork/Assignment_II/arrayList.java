@@ -1,3 +1,4 @@
+package HomeWork.Assignment_II;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -6,7 +7,6 @@ import java.util.Scanner;
 public class arrayList {
     public static void main(String[] args) {
         ArrayList<Integer> numArray = new ArrayList<Integer>();
-        int arr[] = new int[5];
         try{
             Scanner input = new Scanner(System.in);  
             int userInput = 0;
@@ -20,9 +20,6 @@ public class arrayList {
                     numArray.add(userInput);
                 }
 
-
-                
-            
             output = numArray.toString().replace("[", "").replace("]", "");
             //output the arrayList
             System.out.println("input entered: " + output);
