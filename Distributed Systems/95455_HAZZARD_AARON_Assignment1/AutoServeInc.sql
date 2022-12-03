@@ -112,6 +112,7 @@ CREATE TABLE registrationQ(
     vehicleType VARCHAR(20) NOT NULL,
     plateNumber VARCHAR(10) NOT NULL,
     issues VARCHAR2(150) NOT NULL,
+    category VARCHAR2(10) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID)
 );
 
