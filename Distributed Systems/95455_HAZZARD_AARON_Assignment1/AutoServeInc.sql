@@ -105,9 +105,17 @@ CREATE TABLE registered_vehicles(
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-
 drop table registrationQ;
 CREATE TABLE registrationQ(
+    clientID NUMBER NOT NULL,
+    vehicleType VARCHAR(20) NOT NULL,
+    plateNumber VARCHAR(10) NOT NULL,
+    issues VARCHAR2(150) NOT NULL,
+    category VARCHAR2(10) NOT NULL,
+    status VARCHAR2(10) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID)
+);
+CREATE TABLE pendingClients(
     clientID NUMBER NOT NULL,
     vehicleType VARCHAR(20) NOT NULL,
     plateNumber VARCHAR(10) NOT NULL,
@@ -117,7 +125,7 @@ CREATE TABLE registrationQ(
 );
 
 
-drop table job;
+drop table jobs;
 select * from job;
 CREATE TABLE jobs (
     clientID NUMBER NOT NULL,
@@ -126,19 +134,75 @@ CREATE TABLE jobs (
     vehicleType VARCHAR2(20) NOT NULL,
     plateNumber VARCHAR2(10) NOT NULL,
     issue VARCHAR2(150) NOT NULL,
-    jobDescripton VARCHAR(30) NOT NULL,
-    contactEmail VARCHAR(50) NOT NULL,
-    contactPhone VARCHAR(20) NOT NULL,
-    cuurentStatus VARCHAR(10) NOT NULL,
+    category VARCHAR2(10) NOT NULL,
+    currentStatus VARCHAR(10) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
-    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email),
-    FOREIGN KEY(plateNumber) REFERENCES vehicle(plateNumber)
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
---drop table vehicle;
-CREATE TABLE VEHICLE(
-    plateNumber VARCHAR(10) NOT NULL PRIMARY KEY,
-    vehicleType VARCHAR(20) NOT NULL,
+drop table engineRepair;
+CREATE TABLE engineRepair (
     clientID NUMBER NOT NULL,
-    FOREIGN KEY(clientID) REFERENCES clients(ID)
+    mechanicEmail VARCHAR2(50) NOT NULL,
+    staffEmail VARCHAR2(50) NOT NULL,
+    vehicleType VARCHAR2(20) NOT NULL,
+    plateNumber VARCHAR2(10) NOT NULL,
+    issue VARCHAR2(150) NOT NULL,
+    currentStatus VARCHAR(20) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(staffEmail) REFERENCES staff(email),
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
+
+CREATE TABLE breakRepair (
+    clientID NUMBER NOT NULL,
+    mechanicEmail VARCHAR2(50) NOT NULL,
+    staffEmail VARCHAR2(50) NOT NULL,
+    vehicleType VARCHAR2(20) NOT NULL,
+    plateNumber VARCHAR2(10) NOT NULL,
+    issue VARCHAR2(150) NOT NULL,
+    currentStatus VARCHAR(20) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(staffEmail) REFERENCES staff(email),
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
+);
+
+CREATE TABLE clutchRepair (
+    clientID NUMBER NOT NULL,
+    mechanicEmail VARCHAR2(50) NOT NULL,
+    staffEmail VARCHAR2(50) NOT NULL,
+    vehicleType VARCHAR2(20) NOT NULL,
+    plateNumber VARCHAR2(10) NOT NULL,
+    issue VARCHAR2(150) NOT NULL,
+    currentStatus VARCHAR(20) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(staffEmail) REFERENCES staff(email),
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
+);
+DROP TABLE completedJobs;
+CREATE TABLE completedJobs(
+    clientID NUMBER NOT NULL,
+    mechanicEmail VARCHAR(50) NOT NULL,
+    vehicleType VARCHAR(20) NOT NULL,
+    plateNumber VARCHAR(20) NOT NULL,
+    issue VARCHAR(150) NOT NULL,
+    mechanicFeedback VARCHAR(200) NOT NULL,
+    invoice VARCHAR(500) NOT NULL,--500 BYTES IN CASE OF A LONG INVOICE INK
+    status VARCHAR(20) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
+);
+drop table activejobs;
+CREATE TABLE activeJobs(
+    clientID NUMBER NOT NULL,
+    mechanicEmail VARCHAR(50) NOT NULL,
+    vehicleType VARCHAR(20) NOT NULL,
+    plateNumber VARCHAR(20) NOT NULL,
+    issue VARCHAR(150) NOT NULL,
+    mechanicFeedback VARCHAR(200) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    FOREIGN KEY(clientID) REFERENCES clients(ID),
+    FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
+);
+
+--DELETE FROM registrationq WHERE (clientID = 21 AND vehicleType = 'Truck' AND platenumber = 'FGJ5654' AND issues = 'hot' AND category = 'Engine');

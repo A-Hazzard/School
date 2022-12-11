@@ -56,6 +56,12 @@ public Employee(String first, String last,String ssn )
    // abstract method overridden by subclasses
    public abstract double getPaymentAmount(); // no implementation here
 } // end abstract class Employee
+/*
+ * 
+ * interface(methods)
+ * superclass(methods)
+ * subclass(5)
+ */
 
 
 
