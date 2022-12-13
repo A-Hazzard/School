@@ -67,7 +67,7 @@ CREATE TABLE staff(
     position VARCHAR(20) NOT NULL,
     FOREIGN KEY(email) REFERENCES employee(email)
 );
---drop table mechanic;
+--drop table mechanic CASCADE CONSTRAINTS;
 CREATE TABLE mechanic(
     ID NUMBER NOT NULL, 
     firstName VARCHAR(20) NOT NULL,
@@ -82,16 +82,16 @@ CREATE TABLE mechanic(
 
 --drop table clients;
 CREATE TABLE clients(
-   ID NUMBER NOT NULL, 
+    ID NUMBER NOT NULL PRIMARY KEY, 
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
-    email VARCHAR(50) PRIMARY KEY NOT NULL,
+    email VARCHAR(50) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     password VARCHAR(20) NOT NULL,
     position VARCHAR(20) NOT NULL
 );
 
-DROP TABLE registered_vehicles;
+--DROP TABLE registered_vehicles;
 CREATE TABLE registered_vehicles(
     regID NUMBER NOT NULL PRIMARY KEY,
     clientID NUMBER NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE registered_vehicles(
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-drop table registrationQ;
+--drop table registrationQ;
 CREATE TABLE registrationQ(
     clientID NUMBER NOT NULL,
     vehicleType VARCHAR(20) NOT NULL,
@@ -115,6 +115,7 @@ CREATE TABLE registrationQ(
     status VARCHAR2(10) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID)
 );
+--drop table pendingClients;
 CREATE TABLE pendingClients(
     clientID NUMBER NOT NULL,
     vehicleType VARCHAR(20) NOT NULL,
@@ -125,8 +126,7 @@ CREATE TABLE pendingClients(
 );
 
 
-drop table jobs;
-select * from job;
+--drop table jobs;
 CREATE TABLE jobs (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE jobs (
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-drop table engineRepair;
+--drop table engineRepair;
 CREATE TABLE engineRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -153,7 +153,7 @@ CREATE TABLE engineRepair (
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-
+--drop table breakRepair;
 CREATE TABLE breakRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -166,7 +166,7 @@ CREATE TABLE breakRepair (
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-
+--drop table clutchRepair;
 CREATE TABLE clutchRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -179,7 +179,7 @@ CREATE TABLE clutchRepair (
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-DROP TABLE completedJobs;
+--DROP TABLE completedJobs;
 CREATE TABLE completedJobs(
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR(50) NOT NULL,
@@ -192,7 +192,7 @@ CREATE TABLE completedJobs(
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-drop table activejobs;
+--drop table activejobs;
 CREATE TABLE activeJobs(
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR(50) NOT NULL,
@@ -204,5 +204,3 @@ CREATE TABLE activeJobs(
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
-
---DELETE FROM registrationq WHERE (clientID = 21 AND vehicleType = 'Truck' AND platenumber = 'FGJ5654' AND issues = 'hot' AND category = 'Engine');
