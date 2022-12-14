@@ -40,7 +40,7 @@ select * from staff;
 select * from clients;
 select * from registrationq;
 
---INSERT INTO employee values(1,'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '623-4567', 'admin', 'Admin');
+INSERT INTO employee values(1,'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '623-4567', 'admin', 'Admin');
 --INSERT INTO employee values(2,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard', 'Staff');
 --INSERT INTO employee values(3,'Sharon', 'Manzon', 'sharon.manzano@mechanic.autoserve.com', '623-4567', 'sharonmanzano','Mechanic');
 --INSERT INTO staff values(1,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard','Staff');
@@ -91,7 +91,7 @@ CREATE TABLE clients(
     position VARCHAR(20) NOT NULL
 );
 
---DROP TABLE registered_vehicles;
+DROP TABLE registered_vehicles;
 CREATE TABLE registered_vehicles(
     regID NUMBER NOT NULL PRIMARY KEY,
     clientID NUMBER NOT NULL,
@@ -100,7 +100,8 @@ CREATE TABLE registered_vehicles(
     issues VARCHAR(150) NOT NULL,
     staffEmail VARCHAR(50) NOT NULL,
     mechanicEmail VARCHAR(50) NOT NULL,
-    jobCategory VARCHAR(20) NOT NULL,
+    category VARCHAR(20) NOT NULL,
+    status varchar(10) not null,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
@@ -122,6 +123,7 @@ CREATE TABLE pendingClients(
     plateNumber VARCHAR(10) NOT NULL,
     issues VARCHAR2(150) NOT NULL,
     category VARCHAR2(10) NOT NULL,
+    status VARCHAR2(10) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID)
 );
 
@@ -140,7 +142,7 @@ CREATE TABLE jobs (
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
---drop table engineRepair;
+drop table engineRepair;
 CREATE TABLE engineRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -148,12 +150,13 @@ CREATE TABLE engineRepair (
     vehicleType VARCHAR2(20) NOT NULL,
     plateNumber VARCHAR2(10) NOT NULL,
     issue VARCHAR2(150) NOT NULL,
+    category varchar2(10) not null,
     currentStatus VARCHAR(20) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
---drop table breakRepair;
+drop table breakRepair;
 CREATE TABLE breakRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -161,12 +164,13 @@ CREATE TABLE breakRepair (
     vehicleType VARCHAR2(20) NOT NULL,
     plateNumber VARCHAR2(10) NOT NULL,
     issue VARCHAR2(150) NOT NULL,
+    category varchar2(10) not null,
     currentStatus VARCHAR(20) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
---drop table clutchRepair;
+drop table clutchRepair;
 CREATE TABLE clutchRepair (
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR2(50) NOT NULL,
@@ -175,11 +179,12 @@ CREATE TABLE clutchRepair (
     plateNumber VARCHAR2(10) NOT NULL,
     issue VARCHAR2(150) NOT NULL,
     currentStatus VARCHAR(20) NOT NULL,
+        category varchar2(10) not null,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(staffEmail) REFERENCES staff(email),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
---DROP TABLE completedJobs;
+DROP TABLE completedJobs;
 CREATE TABLE completedJobs(
     clientID NUMBER NOT NULL,
     mechanicEmail VARCHAR(50) NOT NULL,
@@ -189,6 +194,8 @@ CREATE TABLE completedJobs(
     mechanicFeedback VARCHAR(200) NOT NULL,
     invoice VARCHAR(500) NOT NULL,--500 BYTES IN CASE OF A LONG INVOICE INK
     status VARCHAR(20) NOT NULL,
+    category VARCHAR(10) NOT NULL,
+    FEE NUMBER(30) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
@@ -204,3 +211,9 @@ CREATE TABLE activeJobs(
     FOREIGN KEY(clientID) REFERENCES clients(ID),
     FOREIGN KEY(mechanicEmail) REFERENCES mechanic(email)
 );
+
+create table hourly_schedule(
+    work number(5) not null,
+    lunch number(5) not null,
+    meetings number(5) not null
+    );
