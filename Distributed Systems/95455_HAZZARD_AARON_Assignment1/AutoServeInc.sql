@@ -40,7 +40,7 @@ select * from staff;
 select * from clients;
 select * from registrationq;
 
-INSERT INTO employee values(1,'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '623-4567', 'admin', 'Admin');
+INSERT INTO employee values(employee_ID.nextval,'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '623-4567', 'admin', 'Admin');
 --INSERT INTO employee values(2,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard', 'Staff');
 --INSERT INTO employee values(3,'Sharon', 'Manzon', 'sharon.manzano@mechanic.autoserve.com', '623-4567', 'sharonmanzano','Mechanic');
 --INSERT INTO staff values(1,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard','Staff');
@@ -80,16 +80,19 @@ CREATE TABLE mechanic(
 
 );
 
---drop table clients;
+drop table clients cascade constraints;
 CREATE TABLE clients(
     ID NUMBER NOT NULL PRIMARY KEY, 
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
     phone VARCHAR(20) NOT NULL,
+    securityQuestion varchar(20) not null,
+    answer varchar(20) not null,
     password VARCHAR(20) NOT NULL,
     position VARCHAR(20) NOT NULL
 );
+
 
 DROP TABLE registered_vehicles;
 CREATE TABLE registered_vehicles(
@@ -116,6 +119,10 @@ CREATE TABLE registrationQ(
     status VARCHAR2(10) NOT NULL,
     FOREIGN KEY(clientID) REFERENCES clients(ID)
 );
+
+UPDATE clients SET password = 'testpassword' 
+WHERE ID = 2 AND password = 'shannonhazzard123';
+
 --drop table pendingClients;
 CREATE TABLE pendingClients(
     clientID NUMBER NOT NULL,
