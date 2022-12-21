@@ -41,10 +41,6 @@ select * from clients;
 select * from registrationq;
 
 INSERT INTO employee values(employee_ID.nextval,'Winston', 'Fields', 'winston.fields@admin.autoserve.com', '623-4567', 'admin', 'Admin');
---INSERT INTO employee values(2,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard', 'Staff');
---INSERT INTO employee values(3,'Sharon', 'Manzon', 'sharon.manzano@mechanic.autoserve.com', '623-4567', 'sharonmanzano','Mechanic');
---INSERT INTO staff values(1,'Shannon', 'Hazzard', 'shannon.hazzard@staff.autoserve.com', '623-4567', 'shannonhazzard','Staff');
---INSERT INTO mechanic values(1,'Sharon', 'Manzon', 'sharon.manzano@mechanic.autoserve.com', '623-4567', 'sharonmanzano','Mechanic');
 
 --drop table employee;
 CREATE TABLE employee(
